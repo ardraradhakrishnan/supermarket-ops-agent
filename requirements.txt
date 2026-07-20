@@ -1,0 +1,47 @@
+# -----------------------------
+# Agent Framework
+# -----------------------------
+google-adk
+google-genai
+
+# -----------------------------
+# Database
+# -----------------------------
+sqlalchemy
+alembic
+
+# -----------------------------
+# Data Validation & Configuration
+# -----------------------------
+pydantic
+python-dotenv
+
+# -----------------------------
+# Telegram Bot
+# -----------------------------
+python-telegram-bot
+
+# -----------------------------
+# PDF Generation
+# -----------------------------
+weasyprint
+
+# -----------------------------
+# PowerPoint Generation
+# -----------------------------
+python-pptx
+matplotlib
+
+# -----------------------------
+# Testing
+# -----------------------------
+pytest
+pytest-cov
+
+# -----------------------------
+# Logging & CLI
+# -----------------------------
+rich
+
+
+pydantic-settings
