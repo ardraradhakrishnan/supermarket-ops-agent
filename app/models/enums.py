@@ -12,6 +12,10 @@ class Unit(str, Enum):
 
 
 class InventoryTransactionType(str, Enum):
+    """
+    Inventory transaction types.
+    """
+
     PURCHASE = "PURCHASE"
     SALE = "SALE"
     RETURN = "RETURN"
@@ -35,3 +39,21 @@ class PaymentStatus(str, Enum):
 class KhataTransactionType(str, Enum):
     DEBIT = "DEBIT"
     CREDIT = "CREDIT"
+
+
+class BillStatus(str, Enum):
+    ACTIVE = "ACTIVE"
+    CANCELLED = "CANCELLED"
+
+from enum import Enum
+
+
+class RequestStatus(str, Enum):
+    """
+    Status of an AI processed request.
+    """
+
+    PENDING = "PENDING"
+    PROCESSING = "PROCESSING"
+    COMPLETED = "COMPLETED"
+    FAILED = "FAILED"

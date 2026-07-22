@@ -26,7 +26,7 @@ class Customer(Base, TimestampMixin):
     phone: Mapped[str] = mapped_column(
         String(20),
         unique=True,
-        nullable=False,
+        nullable=True,
         index=True,
     )
 

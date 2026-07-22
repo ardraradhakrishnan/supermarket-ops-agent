@@ -5,13 +5,14 @@ from sqlalchemy import (
     Integer,
     Numeric,
     String,
+    text
 )
 from sqlalchemy import Enum as SqlEnum
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from app.database.base import Base
 from app.models.base_model import TimestampMixin
-from app.models.enums import PaymentMethod, PaymentStatus
+from app.models.enums import BillStatus, PaymentMethod, PaymentStatus
 
 
 class Bill(Base, TimestampMixin):
@@ -80,6 +81,12 @@ class Bill(Base, TimestampMixin):
         back_populates="bill",
         lazy="selectin",
         cascade="all, delete-orphan",
+    )
+
+    status: Mapped[BillStatus] = mapped_column(
+        SqlEnum(BillStatus),
+        nullable=False,
+        default=BillStatus.ACTIVE,
     )
 
     def __repr__(self) -> str:

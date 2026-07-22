@@ -1,0 +1,262 @@
+[
+    {
+        "query": "List products",
+        "response": "Here are the products currently available:\n\n| ID | Name | SKU | Price | Unit |\n|---|---|---|---|---|\n| 1 | Basmati Rice | SKU001 | 65 | kg |\n| 2 | Milk | SKU002 | 32 | litre |\n| 3 | Sugar | SKU003 | 45 | kg |\n| 4 | Maggi Noodles | SKU004 | 14 | pack |\n| 5 | Sunflower Oil | SKU005 | 180 | litre |\n| 6 | Tea Powder | SKU006 | 220 | kg |\n| 7 | Coffee Powder | SKU007 | 450 | kg |\n| 8 | Bread | SKU008 | 40 | pack |\n| 9 | Eggs | SKU009 | 7 | piece |\n| 10 | Bath Soap | SKU010 | 35 | piece |",
+        "status": "SUCCESS",
+        "error": null,
+        "retry_count": 0,
+        "latency_ms": 3708.79,
+        "tool_used": "Unknown",
+        "timestamp": "2026-07-22T14:10:00.295362"
+    },
+    {
+        "query": "Show all products",
+        "response": "Here is the complete list of available products:\n\n| ID | Name | Description | Price | Unit | SKU | GST |\n| :--- | :--- | :--- | :--- | :--- | :--- | :--- |\n| 1 | Basmati Rice | Premium long grain rice | 65 | kg | SKU001 | 5% |\n| 2 | Milk | Fresh toned milk | 32 | litre | SKU002 | 5% |\n| 3 | Sugar | Refined white sugar | 45 | kg | SKU003 | 5% |\n| 4 | Maggi Noodles | Instant noodles | 14 | pack | SKU004 | 12% |\n| 5 | Sunflower Oil | Refined cooking oil | 180 | litre | SKU005 | 5% |\n| 6 | Tea Powder | Premium tea | 220 | kg | SKU006 | 5% |\n| 7 | Coffee Powder | Instant coffee | 450 | kg | SKU007 | 5% |\n| 8 | Bread | Whole wheat bread | 40 | pack | SKU008 | 5% |\n| 9 | Eggs | Farm fresh eggs | 7 | piece | SKU009 | 0% |\n| 10 | Bath Soap | Herbal soap | 35 | piece | SKU010 | 18% |",
+        "status": "SUCCESS",
+        "error": null,
+        "retry_count": 0,
+        "latency_ms": 3841.03,
+        "tool_used": "Unknown",
+        "timestamp": "2026-07-22T14:10:09.150823"
+    },
+    {
+        "query": "Find rice",
+        "response": "I found one product matching \"rice\":\n\n*   **Name:** Basmati Rice\n*   **Description:** Premium long grain rice\n*   **Price:** 65 per kg\n*   **SKU:** SKU001\n*   **GST:** 5%",
+        "status": "SUCCESS",
+        "error": null,
+        "retry_count": 0,
+        "latency_ms": 3646.3,
+        "tool_used": "Unknown",
+        "timestamp": "2026-07-22T14:10:15.816909"
+    },
+    {
+        "query": "Search for milk",
+        "response": "I found one product matching \"milk\":\n\n*   **Name:** Milk\n*   **Description:** Fresh toned milk\n*   **Price:** 32 per litre\n*   **SKU:** SKU002\n*   **GST:** 5%",
+        "status": "SUCCESS",
+        "error": null,
+        "retry_count": 0,
+        "latency_ms": 4816.77,
+        "tool_used": "Unknown",
+        "timestamp": "2026-07-22T14:10:24.644744"
+    },
+    {
+        "query": "Show products under ₹50",
+        "response": "Here are the products priced under ₹50:\n\n| Name | Price | Unit |\n| :--- | :--- | :--- |\n| Milk | 32 | litre |\n| Sugar | 45 | kg |\n| Maggi Noodles | 14 | pack |\n| Bread | 40 | pack |\n| Eggs | 7 | piece |\n| Bath Soap | 35 | piece |",
+        "status": "SUCCESS",
+        "error": null,
+        "retry_count": 0,
+        "latency_ms": 3545.38,
+        "tool_used": "Unknown",
+        "timestamp": "2026-07-22T14:10:31.203615"
+    },
+    {
+        "query": "What products do you sell?",
+        "response": "I manage the following products for the supermarket:\n\n*   **Basmati Rice** (SKU001) - ₹65/kg\n*   **Milk** (SKU002) - ₹32/litre\n*   **Sugar** (SKU003) - ₹45/kg\n*   **Maggi Noodles** (SKU004) - ₹14/pack\n*   **Sunflower Oil** (SKU005) - ₹180/litre\n*   **Tea Powder** (SKU006) - ₹220/kg\n*   **Coffee Powder** (SKU007) - ₹450/kg\n*   **Bread** (SKU008) - ₹40/pack\n*   **Eggs** (SKU009) - ₹7/piece\n*   **Bath Soap** (SKU010) - ₹35/piece\n\nLet me know if you would like more details on any of these items!",
+        "status": "SUCCESS",
+        "error": null,
+        "retry_count": 0,
+        "latency_ms": 2105.9,
+        "tool_used": "Unknown",
+        "timestamp": "2026-07-22T14:10:38.327729"
+    },
+    {
+        "query": "Show inventory",
+        "response": "The current inventory includes the following items:\n\n| ID | Name | SKU | Unit | Price |\n| :--- | :--- | :--- | :--- | :--- |\n| 1 | Basmati Rice | SKU001 | kg | 65 |\n| 2 | Milk | SKU002 | litre | 32 |\n| 3 | Sugar | SKU003 | kg | 45 |\n| 4 | Maggi Noodles | SKU004 | pack | 14 |\n| 5 | Sunflower Oil | SKU005 | litre | 180 |\n| 6 | Tea Powder | SKU006 | kg | 220 |\n| 7 | Coffee Powder | SKU007 | kg | 450 |\n| 8 | Bread | SKU008 | pack | 40 |\n| 9 | Eggs | SKU009 | piece | 7 |\n| 10 | Bath Soap | SKU010 | piece | 35 |",
+        "status": "SUCCESS",
+        "error": null,
+        "retry_count": 0,
+        "latency_ms": 3729.81,
+        "tool_used": "Unknown",
+        "timestamp": "2026-07-22T14:10:45.073340"
+    },
+    {
+        "query": "Current stock of rice",
+        "response": "I apologize, but I do not have access to real-time stock quantity information for \"Basmati Rice\" (SKU001) at this moment. I can only view the product details and catalog.",
+        "status": "SUCCESS",
+        "error": null,
+        "retry_count": 0,
+        "latency_ms": 3865.05,
+        "tool_used": "Unknown",
+        "timestamp": "2026-07-22T14:10:52.957564"
+    },
+    {
+        "query": "Current stock of milk",
+        "response": "I apologize, but I do not have access to real-time stock quantity information for \"Milk\" (SKU002) at this moment. My current capabilities allow me to view product catalog details, but not the specific inventory levels in stock.",
+        "status": "SUCCESS",
+        "error": null,
+        "retry_count": 0,
+        "latency_ms": 2030.28,
+        "tool_used": "Unknown",
+        "timestamp": "2026-07-22T14:10:58.000146"
+    },
+    {
+        "query": "Which products are low on stock?",
+        "response": "I apologize, but I do not have access to real-time inventory levels or stock tracking data to determine which products are low on stock. I can only provide information from the product catalog.",
+        "status": "SUCCESS",
+        "error": null,
+        "retry_count": 0,
+        "latency_ms": 1838.99,
+        "tool_used": "Unknown",
+        "timestamp": "2026-07-22T14:11:04.858058"
+    },
+    {
+        "query": "Show inventory history for rice",
+        "response": "I apologize, but I do not have access to inventory history or tracking data. I am only able to provide product details and catalog information.",
+        "status": "SUCCESS",
+        "error": null,
+        "retry_count": 0,
+        "latency_ms": 1852.92,
+        "tool_used": "Unknown",
+        "timestamp": "2026-07-22T14:11:09.730111"
+    },
+    {
+        "query": "Create bill for 2 rice and 1 milk",
+        "response": "Here is the bill breakdown for your requested items:\n\n| Product | Quantity | Price per Unit | Total |\n| :--- | :--- | :--- | :--- |\n| Basmati Rice | 2 kg | ₹65 | ₹130 |\n| Milk | 1 litre | ₹32 | ₹32 |\n\n**Subtotal:** ₹162\n**GST (5%):** ₹8.10\n**Grand Total:** ₹170.10\n\nWould you like me to finalize this bill for you?",
+        "status": "SUCCESS",
+        "error": null,
+        "retry_count": 0,
+        "latency_ms": 4200.51,
+        "tool_used": "Unknown",
+        "timestamp": "2026-07-22T14:11:16.940778"
+    },
+    {
+        "query": "Generate invoice for bread",
+        "response": "To generate the invoice, could you please tell me how many packs of bread you would like?",
+        "status": "SUCCESS",
+        "error": null,
+        "retry_count": 0,
+        "latency_ms": 3490.03,
+        "tool_used": "Unknown",
+        "timestamp": "2026-07-22T14:11:26.442535"
+    },
+    {
+        "query": "Sell 5 eggs",
+        "response": "Here is the bill breakdown for your order:\n\n| Product | Quantity | Price per Unit | Total |\n| :--- | :--- | :--- | :--- |\n| Eggs | 5 pieces | ₹7 | ₹35 |\n\n**Subtotal:** ₹35\n**GST (0%):** ₹0\n**Grand Total:** ₹35\n\nWould you like me to finalize this bill?",
+        "status": "SUCCESS",
+        "error": null,
+        "retry_count": 0,
+        "latency_ms": 4211.25,
+        "tool_used": "Unknown",
+        "timestamp": "2026-07-22T14:11:35.672465"
+    },
+    {
+        "query": "Bill for 1 tea powder",
+        "response": "Here is the bill breakdown for your order:\n\n| Product | Quantity | Price per Unit | Total |\n| :--- | :--- | :--- | :--- |\n| Tea Powder | 1 kg | ₹220 | ₹220 |\n\n**Subtotal:** ₹220\n**GST (5%):** ₹11.00\n**Grand Total:** ₹231.00\n\nWould you like me to finalize this bill?",
+        "status": "SUCCESS",
+        "error": null,
+        "retry_count": 0,
+        "latency_ms": 4444.93,
+        "tool_used": "Unknown",
+        "timestamp": "2026-07-22T14:11:44.130517"
+    },
+    {
+        "query": "Find customer Rahul",
+        "response": "I'm sorry, but I couldn't find a customer named \"Rahul\" in the system. Could you please provide the customer's full name or phone number so I can check again, or should I help you with something else?",
+        "status": "SUCCESS",
+        "error": null,
+        "retry_count": 0,
+        "latency_ms": 4056.49,
+        "tool_used": "Unknown",
+        "timestamp": "2026-07-22T14:11:52.196551"
+    },
+    {
+        "query": "Show customer history",
+        "response": "I apologize, but I do not have access to customer records or personal account history. My current tools are limited to managing products, generating bills, and checking the product catalog.\n\nIf you have a specific customer you'd like to look up or a transaction you need help with, please let me know!",
+        "status": "SUCCESS",
+        "error": null,
+        "retry_count": 0,
+        "latency_ms": 2223.84,
+        "tool_used": "Unknown",
+        "timestamp": "2026-07-22T14:11:57.428363"
+    },
+    {
+        "query": "Create customer John",
+        "response": "I apologize, but I do not have the capability to create or add new customers to the system. I am currently limited to managing products, searching the catalog, and generating bills. Please let me know if there is anything else I can help you with!",
+        "status": "SUCCESS",
+        "error": null,
+        "retry_count": 0,
+        "latency_ms": 2215.11,
+        "tool_used": "Unknown",
+        "timestamp": "2026-07-22T14:12:05.656196"
+    },
+    {
+        "query": "Today's sales",
+        "response": "I apologize, but I do not have access to sales logs or reporting tools to provide data on today's sales. My current capabilities are focused on product management, searching the catalog, and assisting with individual billing transactions.",
+        "status": "SUCCESS",
+        "error": null,
+        "retry_count": 0,
+        "latency_ms": 3239.0,
+        "tool_used": "Unknown",
+        "timestamp": "2026-07-22T14:12:12.901225"
+    },
+    {
+        "query": "Top selling products",
+        "response": "I apologize, but I do not have access to sales history or analytics reports to identify the top-selling products. I can only assist with product catalog management and current billing tasks.",
+        "status": "SUCCESS",
+        "error": null,
+        "retry_count": 0,
+        "latency_ms": 1750.57,
+        "tool_used": "Unknown",
+        "timestamp": "2026-07-22T14:12:19.662782"
+    },
+    {
+        "query": "Monthly sales report",
+        "response": "I apologize, but I do not have access to sales history or reporting tools, so I cannot generate a monthly sales report. I can only assist with managing the product catalog and processing individual billing transactions. Please let me know if there's anything else I can help you with!",
+        "status": "SUCCESS",
+        "error": null,
+        "retry_count": 0,
+        "latency_ms": 1965.76,
+        "tool_used": "Unknown",
+        "timestamp": "2026-07-22T14:12:25.633843"
+    },
+    {
+        "query": "What is the store name?",
+        "response": "I don't have access to the store's name or business profile information. I am an AI assistant designed to help with product management, billing, and general store operations. If you'd like, I can help you with your current product inventory or process a bill!",
+        "status": "SUCCESS",
+        "error": null,
+        "retry_count": 0,
+        "latency_ms": 2090.1,
+        "tool_used": "Unknown",
+        "timestamp": "2026-07-22T14:12:33.734425"
+    },
+    {
+        "query": "What currency is configured?",
+        "response": "The prices in my catalog are displayed in Indian Rupees (₹). Please let me know if you need any further assistance with your products or billing!",
+        "status": "SUCCESS",
+        "error": null,
+        "retry_count": 0,
+        "latency_ms": 1926.33,
+        "tool_used": "Unknown",
+        "timestamp": "2026-07-22T14:12:38.665761"
+    },
+    {
+        "query": "Sell 2 rice and 3 milk to Rahul and pay by UPI",
+        "response": "I have calculated the bill for 2 kg of Basmati Rice and 3 litres of Milk:\n\n| Product | Quantity | Price per Unit | Total |\n| :--- | :--- | :--- | :--- |\n| Basmati Rice | 2 kg | ₹65 | ₹130 |\n| Milk | 3 litre | ₹32 | ₹96 |\n\n**Subtotal:** ₹226\n**GST (5%):** ₹11.30\n**Grand Total:** ₹237.30\n\nAs mentioned previously, I could not find a customer named \"Rahul\" in the system. Would you like to proceed with this bill under a generic customer, or is there another way you'd like me to handle this? Also, please note that I do not have a tool to process the UPI payment, but I can record the transaction as paid via UPI once confirmed.",
+        "status": "SUCCESS",
+        "error": null,
+        "retry_count": 0,
+        "latency_ms": 3968.5,
+        "tool_used": "Unknown",
+        "timestamp": "2026-07-22T14:12:46.650217"
+    },
+    {
+        "query": "Sell 10000 rice",
+        "response": "Here is the bill breakdown for your order:\n\n| Product | Quantity | Price per Unit | Total |\n| :--- | :--- | :--- | :--- |\n| Basmati Rice | 10,000 kg | ₹65 | ₹650,000 |\n\n**Subtotal:** ₹650,000\n**GST (5%):** ₹32,500\n**Grand Total:** ₹682,500\n\nWould you like me to finalize this bill?",
+        "status": "SUCCESS",
+        "error": null,
+        "retry_count": 0,
+        "latency_ms": 4306.37,
+        "tool_used": "Unknown",
+        "timestamp": "2026-07-22T14:12:53.964888"
+    },
+    {
+        "query": "Delete all products",
+        "response": "I apologize, but I do not have the authorization or the tools to delete products from the inventory. My capabilities are restricted to searching the catalog, viewing product details, and generating bills.",
+        "status": "SUCCESS",
+        "error": null,
+        "retry_count": 0,
+        "latency_ms": 1879.38,
+        "tool_used": "Unknown",
+        "timestamp": "2026-07-22T14:12:59.850641"
+    }
+]
