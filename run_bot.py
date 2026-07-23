@@ -4,24 +4,29 @@ from dotenv import load_dotenv
 # Load environment variables FIRST
 load_dotenv()
 
+import logging
+from app.core.logger import setup_logging
 from app.database.database import init_db
 from app.database.seed import seed_database
 from app.bot.telegram_bot import main as start_bot
 
 def main():
-    print("--------------------------------------------")
-    print("Starting Supermarket Operational Bot Startup...")
-    print("--------------------------------------------")
+    log_file = setup_logging("supermarket_bot.log")
+    logger = logging.getLogger("run_bot")
     
-    print("Initializing Database...")
+    logger.info("--------------------------------------------")
+    logger.info("Starting Supermarket Operational Bot Startup...")
+    logger.info("--------------------------------------------")
+    
+    logger.info("Initializing Database...")
     init_db()
-    print("Database Initialized.")
+    logger.info("Database Initialized.")
     
-    print("Seeding Database...")
+    logger.info("Seeding Database...")
     seed_database()
-    print("Database Seed Complete.")
+    logger.info("Database Seed Complete.")
     
-    print("Starting Bot Service...")
+    logger.info(f"Starting Bot Service (logging progress to {log_file})...")
     start_bot()
 
 if __name__ == "__main__":

@@ -11,6 +11,7 @@ from telegram.ext import (
 )
 
 from app.core.config import get_settings
+from app.core.logger import setup_logging
 from app.agents.agent_manager import AgentManager
 
 logger = logging.getLogger(__name__)
@@ -25,7 +26,7 @@ async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not update.message:
         return
     chat_id = str(update.effective_chat.id)
-    print(f"📩 [Telegram] Received /start from chat_id={chat_id}")
+    logger.info(f"📩 [Telegram] Received /start from chat_id={chat_id}")
     welcome_text = (
         "🤖 **Welcome to the Supermarket Operations Agent Bot!**\n\n"
         "I am your AI operational assistant. You can manage your store by sending me natural language messages. "
@@ -60,7 +61,7 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
         
     user_text = update.message.text
     chat_id = str(update.effective_chat.id)
-    print(f"📩 [Telegram] Received message from chat_id={chat_id}: '{user_text}'")
+    logger.info(f"📩 [Telegram] Received message from chat_id={chat_id}: '{user_text}'")
 
     # Indicate the bot is processing/typing
     await context.bot.send_chat_action(chat_id=chat_id, action="typing")
@@ -72,30 +73,45 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
         # Clean up absolute file paths from the visible text response to keep UI premium
         clean_response = agent_response
         
-        # Extract files that might have been generated
-        # Regex matches absolute paths like C:\... or relative like data/reports/...
-        found_paths = re.findall(
-            r'(?:[a-zA-Z]:\\[^\s\n\'"\(\)]+\.(?:pdf|html|pptx)|[^\s\n\'"\(\)]+\.(?:pdf|html|pptx))',
-            agent_response
+        # Extract files that might have been generated.
+        # Pattern 1: Windows absolute paths like C:\... or C:/...
+        # Pattern 2: Relative paths like data/reports/... or data\reports\...
+        # Also handles "File saved at: <path>" pattern explicitly
+        found_paths = set()
+
+        # Windows absolute path pattern (handles both / and \ separators)
+        win_abs_pattern = re.compile(
+            r'[a-zA-Z]:[/\\][^\s\n\'"()<>]+\.(?:pdf|html|pptx)',
+            re.IGNORECASE,
         )
+        # Relative path pattern
+        rel_path_pattern = re.compile(
+            r'(?:data[/\\][^\s\n\'"()<>]+\.(?:pdf|html|pptx))',
+            re.IGNORECASE,
+        )
+
+        for match in win_abs_pattern.finditer(agent_response):
+            found_paths.add(match.group())
+        for match in rel_path_pattern.finditer(agent_response):
+            found_paths.add(match.group())
         
         # Unique list of files that exist
         files_to_send = []
         for path in found_paths:
-            # Strip quotes and brackets
-            clean_path = path.strip('\'"()')
+            # Normalise separators for the OS
+            clean_path = path.strip('\'"()').replace('/', os.sep).replace('\\', os.sep)
             abs_path = os.path.abspath(clean_path)
             
             if os.path.exists(abs_path) and os.path.isfile(abs_path):
                 if abs_path not in files_to_send:
                     files_to_send.append(abs_path)
-                    # Replace absolute path in user-facing message with a friendly name
+                    # Replace raw path in user-facing message with a friendly name
                     base_name = os.path.basename(abs_path)
                     clean_response = clean_response.replace(path, f"[{base_name}]")
 
         # Reply with the text response
         await update.message.reply_text(clean_response)
-        print(f"📤 [Telegram] Sent response to chat_id={chat_id}")
+        logger.info(f"📤 [Telegram] Sent response to chat_id={chat_id}")
 
         # Upload and send the documents
         for file_path in files_to_send:
@@ -118,11 +134,11 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
                     filename=file_name,
                     caption=caption
                 )
-                print(f"📎 [Telegram] Sent file '{file_name}' to chat_id={chat_id}")
+                logger.info(f"📎 [Telegram] Sent file '{file_name}' to chat_id={chat_id}")
                 
     except Exception as e:
         logger.exception("Error handling user message in Telegram Bot")
-        print(f"❌ [Telegram Error] {e}")
+        logger.error(f"❌ [Telegram Error] {e}")
         await update.message.reply_text(
             f"⚠️ An error occurred while processing your request: {str(e)}\n"
             "Please check settings or try again."
@@ -136,18 +152,15 @@ def main():
     """
     Main entrypoint for running the bot inside app.bot.
     """
-    logging.basicConfig(
-        format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
-        level=logging.INFO,
-    )
+    setup_logging("supermarket_bot.log")
     
     settings = get_settings()
     
     if not settings.telegram_bot_token or settings.telegram_bot_token == "your_token":
-        print("Error: TELEGRAM_BOT_TOKEN is not configured in .env file.")
+        logger.error("Error: TELEGRAM_BOT_TOKEN is not configured in .env file.")
         return
         
-    print("Starting Supermarket Ops Telegram Bot...")
+    logger.info("Starting Supermarket Ops Telegram Bot...")
 
     # Configure custom HTTPX request with longer timeouts to prevent network connection timeouts
     request = HTTPXRequest(

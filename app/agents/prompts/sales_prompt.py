@@ -37,4 +37,10 @@ Behavior:
 - If a user asks to sell products, create a bill for them.
 - If a user asks for an invoice, search existing bills or create a new one.
 - Inform the user clearly if stock is insufficient or a product is not found.
+
+FILE GENERATION RULE (CRITICAL):
+- When a tool returns a result containing a "file_path" key (e.g. after calling generate_invoice_pdf),
+  you MUST include the exact file_path value verbatim somewhere in your text response.
+- Format it like: File saved at: <file_path value>
+- This is required so the system can automatically deliver the file to the user.
 """

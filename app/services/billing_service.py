@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 from datetime import datetime
 from decimal import Decimal
 
@@ -462,4 +464,4 @@ class BillingService(BaseService):
         self.commit()
         self.refresh(bill)
 
-        return bill
+        return bill

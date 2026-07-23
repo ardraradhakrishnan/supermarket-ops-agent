@@ -1,8 +1,11 @@
+import logging
 from google.adk.runners import Runner
 from google.adk.sessions import InMemorySessionService
 from google.genai.types import Content, Part
 
 from app.agents import AgentFactory
+
+logger = logging.getLogger(__name__)
 
 
 class AgentManager:
@@ -30,6 +33,7 @@ class AgentManager:
         if session_id in self._initialized_sessions:
             return
 
+        logger.info(f"Initializing ADK session for session_id={session_id}")
         await self.session_service.create_session(
             app_name=self.APP_NAME,
             user_id=self.USER_ID,
@@ -47,6 +51,7 @@ class AgentManager:
         and returns the final response.
         """
         await self._initialize_session(session_id)
+        logger.info(f"Processing query for session_id={session_id}: '{message}'")
 
         user_message = Content(
             role="user",
@@ -80,4 +85,5 @@ class AgentManager:
             if texts:
                 final_response = "\n".join(texts)
 
+        logger.info(f"Generated agent response for session_id={session_id} ({len(final_response)} chars)")
         return final_response

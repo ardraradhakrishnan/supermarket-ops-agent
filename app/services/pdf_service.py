@@ -36,7 +36,8 @@ class PDFService(BaseService):
         items_html = ""
         for index, item in enumerate(bill.bill_items, start=1):
             product_name = item.product.name if item.product else f"Product ID: {item.product_id}"
-            line_total = item.quantity * item.unit_price
+            # Compute GST amount per line (BillItem has no gst_amount column)
+            item_gst_amount = float(item.quantity) * float(item.unit_price) * float(item.gst_rate) / 100.0
             items_html += f"""
             <tr class="item">
                 <td class="text-center">{index}</td>
@@ -44,7 +45,7 @@ class PDFService(BaseService):
                 <td class="text-right">{item.quantity}</td>
                 <td class="text-right">{currency} {item.unit_price:.2f}</td>
                 <td class="text-right">{item.gst_rate}%</td>
-                <td class="text-right">{currency} {item.gst_amount:.2f}</td>
+                <td class="text-right">{currency} {item_gst_amount:.2f}</td>
                 <td class="text-right">{currency} {item.line_total:.2f}</td>
             </tr>
             """
@@ -283,21 +284,30 @@ class PDFService(BaseService):
         
         pdf_path = os.path.join(output_dir, f"{bill.invoice_number}.pdf")
         html_path = os.path.join(output_dir, f"{bill.invoice_number}.html")
-        
-        # Save HTML version first (both as output and fallback)
+
+        # Try compiling to PDF via xhtml2pdf (pure Python, works on Windows without GTK)
         try:
-            with open(html_path, "w", encoding="utf-8") as f:
-                f.write(html_content)
-        except Exception as e:
-            logger.error(f"Failed to save HTML invoice: {e}")
-            
-        # Try compiling to PDF via WeasyPrint
-        try:
-            from weasyprint import HTML
-            HTML(string=html_content).write_pdf(pdf_path)
+            from xhtml2pdf import pisa
+
+            with open(pdf_path, "wb") as pdf_file:
+                pisa_status = pisa.CreatePDF(
+                    html_content,
+                    dest=pdf_file,
+                    encoding="utf-8",
+                )
+
+            if pisa_status.err:
+                raise RuntimeError(f"xhtml2pdf reported errors: {pisa_status.err}")
+
             logger.info(f"PDF invoice successfully generated: {pdf_path}")
             return pdf_path
+
         except Exception as e:
-            logger.warning(f"WeasyPrint PDF compilation failed, falling back to HTML file. Error: {e}")
-            # If WeasyPrint fails (e.g. missing GTK on Windows), return the HTML file path
+            logger.warning(f"xhtml2pdf PDF compilation failed, falling back to HTML file. Error: {e}")
+            # Fallback: save HTML so the user at least gets something
+            try:
+                with open(html_path, "w", encoding="utf-8") as f:
+                    f.write(html_content)
+            except Exception as html_err:
+                logger.error(f"Failed to save HTML fallback invoice: {html_err}")
             return html_path
