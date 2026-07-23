@@ -41,8 +41,13 @@ class KhataTransactionType(str, Enum):
     CREDIT = "CREDIT"
 
 
+# class BillStatus(str, Enum):
+#     ACTIVE = "ACTIVE"
+#     CANCELLED = "CANCELLED"
+
 class BillStatus(str, Enum):
-    ACTIVE = "ACTIVE"
+    DRAFT = "DRAFT"
+    FINALIZED = "FINALIZED"
     CANCELLED = "CANCELLED"
 
 from enum import Enum

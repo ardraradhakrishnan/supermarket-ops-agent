@@ -16,9 +16,9 @@ load_dotenv()
 
 
 MAX_RETRIES = 5
-RETRY_DELAY = 20      # seconds
-MIN_DELAY = 3         # seconds between successful requests
-MAX_DELAY = 6
+RETRY_DELAY = 70      # seconds
+MIN_DELAY = 15         # seconds between successful requests
+MAX_DELAY = 20
 
 
 async def ask_with_retry(manager, query):

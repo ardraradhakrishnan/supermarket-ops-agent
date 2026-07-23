@@ -89,6 +89,7 @@ def serialize_bill(bill) -> dict:
     """
     Serialize a bill with items.
     """
+    from app.models.enums import PaymentStatus
 
     return {
         "id": bill.id,
@@ -101,9 +102,9 @@ def serialize_bill(bill) -> dict:
         ),
         "subtotal": float(bill.subtotal),
         "discount": float(bill.discount),
-        "tax": float(bill.tax),
-        "total": float(bill.total),
-        "paid_amount": float(bill.paid_amount),
+        "tax": float(bill.gst_amount),
+        "total": float(bill.grand_total),
+        "paid_amount": float(bill.grand_total) if bill.payment_status == PaymentStatus.PAID else 0.0,
         "payment_method": (
             bill.payment_method.value
             if bill.payment_method
@@ -124,9 +125,9 @@ def serialize_bill(bill) -> dict:
                 "product": item.product.name,
                 "quantity": float(item.quantity),
                 "unit_price": float(item.unit_price),
-                "total": float(item.total),
+                "total": float(item.line_total),
             }
-            for item in bill.items
+            for item in bill.bill_items
         ],
         "created_at": (
             bill.created_at.isoformat()

@@ -37,10 +37,13 @@ def add_credit(
             khata
         )
 
-    except Exception:
+    except Exception as e:
 
         service.rollback()
-        raise
+        return {
+            "status": "error",
+            "message": str(e),
+        }
 
     finally:
 
@@ -70,10 +73,13 @@ def add_payment(
             khata
         )
 
-    except Exception:
+    except Exception as e:
 
         service.rollback()
-        raise
+        return {
+            "status": "error",
+            "message": str(e),
+        }
 
     finally:
 

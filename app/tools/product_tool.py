@@ -82,10 +82,13 @@ def create_product(
             new_product
         )
 
-    except Exception:
+    except Exception as e:
 
         service.rollback()
-        raise
+        return {
+            "status": "error",
+            "message": str(e),
+        }
 
     finally:
 
@@ -112,10 +115,13 @@ def update_product(
             updated
         )
 
-    except:
+    except Exception as e:
 
         service.rollback()
-        raise
+        return {
+            "status": "error",
+            "message": str(e),
+        }
 
     finally:
 
@@ -141,10 +147,13 @@ def deactivate_product(
             product
         )
 
-    except:
+    except Exception as e:
 
         service.rollback()
-        raise
+        return {
+            "status": "error",
+            "message": str(e),
+        }
 
     finally:
 

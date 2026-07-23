@@ -23,7 +23,7 @@ from app.models.enums import (
     KhataTransactionType,
 )
 
-from app.schemas.billing import BillCreate
+from app.schemas.billing import BillCreate, BillPaymentCreate
 from app.schemas.inventory import InventoryTransactionCreate
 from app.schemas.khata import KhataTransactionCreate
 
@@ -80,7 +80,7 @@ class BillingService(BaseService):
         if customer_id is None:
             return None
 
-        customer = self.customer_service.get_by_id(
+        customer = self.customer_service.get(
             customer_id
         )
 
@@ -159,7 +159,7 @@ class BillingService(BaseService):
                 product_id=product.id,
                 quantity=item.quantity,
                 unit_price=product.unit_price,
-                gst_amount=line_gst,
+                gst_rate=product.gst_rate,
                 line_total=line_total,
             )
 
@@ -278,12 +278,12 @@ class BillingService(BaseService):
                     InventoryTransactionCreate(
                         product_id=item.product_id,
                         quantity=item.quantity,
-                        transaction_type=InventoryTransactionType.STOCK_OUT,
+                        transaction_type=InventoryTransactionType.SALE,
                         remarks=f"Invoice {bill.invoice_number}",
                     )
                 )
 
-                self.inventory_service.stock_out(
+                self.inventory_service.record_sale(
                     inventory_transaction
                 )
 
@@ -395,11 +395,11 @@ class BillingService(BaseService):
 
             for item in bill.bill_items:
 
-                self.inventory_service.stock_in(
+                self.inventory_service.record_return(
                     InventoryTransactionCreate(
                         product_id=item.product_id,
                         quantity=item.quantity,
-                        transaction_type=InventoryTransactionType.STOCK_IN,
+                        transaction_type=InventoryTransactionType.RETURN,
                         remarks=f"Cancelled Invoice {bill.invoice_number}",
                     )
                 )
@@ -416,7 +416,7 @@ class BillingService(BaseService):
                     KhataTransactionCreate(
                         customer_id=bill.customer_id,
                         amount=bill.grand_total,
-                        transaction_type=KhataTransactionType.PAYMENT,
+                        transaction_type=KhataTransactionType.DEBIT,
                         remarks=f"Cancelled Invoice {bill.invoice_number}",
                     )
                 )
@@ -433,3 +433,33 @@ class BillingService(BaseService):
 
             self.rollback()
             raise
+
+    def search_bill(self, keyword: str) -> list[Bill]:
+        """
+        Search bills by invoice number, customer name, or customer phone.
+        """
+        return self.scalars(
+            select(Bill)
+            .outerjoin(Customer)
+            .where(
+                (Bill.invoice_number.like(f"%{keyword}%")) |
+                (Customer.name.like(f"%{keyword}%")) |
+                (Customer.phone.like(f"%{keyword}%"))
+            )
+            .order_by(Bill.created_at.desc())
+        )
+
+    def receive_payment(self, payment: BillPaymentCreate) -> Bill:
+        """
+        Records a payment for a bill and updates its status to PAID.
+        """
+        bill = self.get_bill(payment.bill_id)
+
+        bill.payment_status = PaymentStatus.PAID
+        bill.payment_method = payment.payment_method
+
+        self.flush()
+        self.commit()
+        self.refresh(bill)
+
+        return bill

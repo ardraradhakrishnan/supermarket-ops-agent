@@ -1,0 +1,322 @@
+[
+    {
+        "query": "add loose rice 20kg GST 0%",
+        "response": "Successfully added the product \"Loose Rice 20kg\" (SKU: LR-20KG) with a GST rate of 0%.",
+        "status": "SUCCESS",
+        "error": null,
+        "retry_count": 0,
+        "latency_ms": 6250.69,
+        "tool_used": "Unknown",
+        "timestamp": "2026-07-23T15:13:53.025254"
+    },
+    {
+        "query": "add Aashirvaad Atta 5kg GST 5% HSN 1101 cost 210 MRP 249",
+        "response": "A product with the SKU 'AASH-ATTA-5KG' already exists. Would you like to update the existing product instead?",
+        "status": "SUCCESS",
+        "error": null,
+        "retry_count": 0,
+        "latency_ms": 4264.19,
+        "tool_used": "Unknown",
+        "timestamp": "2026-07-23T15:14:17.306013"
+    },
+    {
+        "query": "add Bath Soap GST 18% HSN 3401",
+        "response": "Successfully added the product \"Bath Soap\" (SKU: BATH-SOAP) with a GST rate of 18%.",
+        "status": "SUCCESS",
+        "error": null,
+        "retry_count": 0,
+        "latency_ms": 4063.36,
+        "tool_used": "Unknown",
+        "timestamp": "2026-07-23T15:14:36.372180"
+    },
+    {
+        "query": "sell 2kg loose rice",
+        "response": "I am sorry, but there is insufficient stock for \"Loose Rice 20kg\" to complete this sale. You may want to check the inventory status or update the stock levels.",
+        "status": "SUCCESS",
+        "error": null,
+        "retry_count": 0,
+        "latency_ms": 5493.63,
+        "tool_used": "Unknown",
+        "timestamp": "2026-07-23T15:14:56.878279"
+    },
+    {
+        "query": "sell 1 bath soap",
+        "response": "I am sorry, but there is insufficient stock for \"Bath Soap\" to complete this sale. You may want to check the inventory status or update the stock levels.",
+        "status": "SUCCESS",
+        "error": null,
+        "retry_count": 0,
+        "latency_ms": 45327.99,
+        "tool_used": "Unknown",
+        "timestamp": "2026-07-23T15:15:58.225852"
+    },
+    {
+        "query": "show me the tax breakup for that last bill",
+        "response": "The last bill (ID: 18) was for 3 units of Milk with a subtotal of 96.0, total tax of 4.8, and a final total of 100.8.\n\nPlease note that the attempts to sell \"Loose Rice 20kg\" and \"Bath Soap\" were unsuccessful due to insufficient stock, so no bills were generated for those items.",
+        "status": "SUCCESS",
+        "error": null,
+        "retry_count": 0,
+        "latency_ms": 24310.36,
+        "tool_used": "Unknown",
+        "timestamp": "2026-07-23T15:16:38.544006"
+    },
+    {
+        "query": "start a bill",
+        "response": "Please provide the product names or IDs and the quantities for the items you would like to add to the new bill. Also, let me know your preferred payment method (CASH, UPI, CARD, or CREDIT).",
+        "status": "SUCCESS",
+        "error": null,
+        "retry_count": 0,
+        "latency_ms": 29388.24,
+        "tool_used": "Unknown",
+        "timestamp": "2026-07-23T15:17:25.940869"
+    },
+    {
+        "query": "add 2 rice to the bill",
+        "response": "I apologize, but I still cannot add 2 units of \"Loose Rice 20kg\" to the bill because there is insufficient stock available.",
+        "status": "SUCCESS",
+        "error": null,
+        "retry_count": 0,
+        "latency_ms": 52432.36,
+        "tool_used": "Unknown",
+        "timestamp": "2026-07-23T15:18:38.386641"
+    },
+    {
+        "query": "add 1 milk to the bill",
+        "response": "The bill has been created successfully. \n\n**Invoice Number:** INV-20260723-0019\n**Items:**\n- Sunflower Oil: 1 unit\n\n**Subtotal:** 180.0\n**Tax:** 9.0\n**Total Amount:** 189.0\n**Payment Method:** CASH\n\n*(Note: It appears the system added Sunflower Oil instead of Milk. If you need me to adjust this or need help with a different product, please let me know.)*",
+        "status": "SUCCESS",
+        "error": null,
+        "retry_count": 0,
+        "latency_ms": 17017.12,
+        "tool_used": "Unknown",
+        "timestamp": "2026-07-23T15:19:11.408049"
+    },
+    {
+        "query": "remove the milk",
+        "response": "I apologize, but I encountered an error while trying to cancel that bill (Invoice INV-20260723-0019). It seems I am unable to perform a cancellation at this moment. Would you like me to look into anything else?",
+        "status": "SUCCESS",
+        "error": null,
+        "retry_count": 0,
+        "latency_ms": 4124.57,
+        "tool_used": "Unknown",
+        "timestamp": "2026-07-23T15:19:31.548401"
+    },
+    {
+        "query": "add 3 milk instead",
+        "response": "The bill (Invoice INV-20260723-0020) has been created successfully with the following details:\n\n**Items:**\n- Sunflower Oil: 3 units\n\n**Subtotal:** 540.0\n**Tax:** 27.0\n**Total Amount:** 567.0\n**Payment Method:** CASH\n\n*Please note that the system continues to process these as \"Sunflower Oil\". If this is incorrect, I recommend checking the product database or verifying the product IDs.*",
+        "status": "SUCCESS",
+        "error": null,
+        "retry_count": 0,
+        "latency_ms": 4373.74,
+        "tool_used": "Unknown",
+        "timestamp": "2026-07-23T15:19:53.938098"
+    },
+    {
+        "query": "show me the bill so far",
+        "response": "The current bill (Invoice INV-20260723-0020) is as follows:\n\n*   **Items:** 3 units of Sunflower Oil\n*   **Subtotal:** 540.0\n*   **Tax:** 27.0\n*   **Total:** 567.0\n*   **Payment Method:** CASH\n*   **Status:** PAID\n\nIt appears that even when requested, the items are being recorded as \"Sunflower Oil\". I recommend double-checking the product IDs with the product catalog. Would you like me to help you search for the correct ID for Milk?",
+        "status": "SUCCESS",
+        "error": null,
+        "retry_count": 0,
+        "latency_ms": 7914.69,
+        "tool_used": "Unknown",
+        "timestamp": "2026-07-23T15:20:17.859525"
+    },
+    {
+        "query": "finalize the bill",
+        "response": "The bill (Invoice INV-20260723-0020) is already marked as \"PAID\" in the system, so it is finalized. \n\nWould you like me to generate a PDF invoice for this bill, or is there anything else you need assistance with?",
+        "status": "SUCCESS",
+        "error": null,
+        "retry_count": 0,
+        "latency_ms": 1989.93,
+        "tool_used": "Unknown",
+        "timestamp": "2026-07-23T15:20:39.853607"
+    },
+    {
+        "query": "put ₹500 on Rahul's credit",
+        "response": "I have successfully added ₹500 to Rahul Sharma's (Customer ID: 1) credit account.",
+        "status": "SUCCESS",
+        "error": null,
+        "retry_count": 0,
+        "latency_ms": 8290.99,
+        "tool_used": "Unknown",
+        "timestamp": "2026-07-23T15:21:08.155070"
+    },
+    {
+        "query": "what's Rahul's balance?",
+        "response": "Rahul Sharma's current outstanding balance is ₹200.",
+        "status": "SUCCESS",
+        "error": null,
+        "retry_count": 0,
+        "latency_ms": 5102.59,
+        "tool_used": "Unknown",
+        "timestamp": "2026-07-23T15:21:31.280006"
+    },
+    {
+        "query": "Rahul paid ₹200",
+        "response": "I have recorded a payment of ₹200 for Rahul Sharma.",
+        "status": "SUCCESS",
+        "error": null,
+        "retry_count": 0,
+        "latency_ms": 4451.31,
+        "tool_used": "Unknown",
+        "timestamp": "2026-07-23T15:21:52.739082"
+    },
+    {
+        "query": "what's Rahul's balance?",
+        "response": "Rahul Sharma's current outstanding balance is ₹0.",
+        "status": "SUCCESS",
+        "error": null,
+        "retry_count": 0,
+        "latency_ms": 3833.95,
+        "tool_used": "Unknown",
+        "timestamp": "2026-07-23T15:22:14.591930"
+    },
+    {
+        "query": "Priya paid ₹100",
+        "response": "I could not find a customer named \"Priya\". Could you please provide her full name or phone number so I can correctly record the payment?",
+        "status": "SUCCESS",
+        "error": null,
+        "retry_count": 0,
+        "latency_ms": 5137.08,
+        "tool_used": "Unknown",
+        "timestamp": "2026-07-23T15:22:37.749458"
+    },
+    {
+        "query": "put -₹300 on Rahul's credit",
+        "response": "I have processed the entry of -₹300 for Rahul Sharma.",
+        "status": "SUCCESS",
+        "error": null,
+        "retry_count": 0,
+        "latency_ms": 4316.0,
+        "tool_used": "Unknown",
+        "timestamp": "2026-07-23T15:23:02.082548"
+    },
+    {
+        "query": "sell 1 coffee powder for ₹50",
+        "response": "I am sorry, but I cannot process a credit sale without a customer associated with the bill. Please provide the customer's name or ID so I can record the sale of the coffee powder correctly.",
+        "status": "SUCCESS",
+        "error": null,
+        "retry_count": 0,
+        "latency_ms": 7329.9,
+        "tool_used": "Unknown",
+        "timestamp": "2026-07-23T15:23:25.434166"
+    },
+    {
+        "query": "add atta",
+        "response": "I found multiple products for \"Atta\":\n\n1.  **Aashirvaad Atta 5kg** (SKU: AASHIRVAAD-ATTA-5KG, Price: 210)\n2.  **Aashirvaad Atta 5kg** (SKU: AASH-ATTA-5KG, Price: 210)\n3.  **Aashirvaad Atta 5kg** (SKU: AASH-ATTA-5KG-1101, Price: 210)\n\nWhich one would you like to add?",
+        "status": "SUCCESS",
+        "error": null,
+        "retry_count": 0,
+        "latency_ms": 6779.23,
+        "tool_used": "Unknown",
+        "timestamp": "2026-07-23T15:23:51.222944"
+    },
+    {
+        "query": "sell some oil",
+        "response": "To process a sale for \"oil,\" I need to know the specific type of oil and the quantity. Could you please specify which oil you would like to purchase and how many units?",
+        "status": "SUCCESS",
+        "error": null,
+        "retry_count": 0,
+        "latency_ms": 8252.31,
+        "tool_used": "Unknown",
+        "timestamp": "2026-07-23T15:24:16.486261"
+    },
+    {
+        "query": "send me a PDF invoice for INV-20260723-0012",
+        "response": "I apologize, but I encountered an error while trying to generate the PDF invoice for bill INV-20260723-0012. It seems there is a technical issue preventing the PDF generation at the moment. Would you like me to provide the invoice details as text, or can I assist you with something else?",
+        "status": "SUCCESS",
+        "error": null,
+        "retry_count": 0,
+        "latency_ms": 6873.76,
+        "tool_used": "Unknown",
+        "timestamp": "2026-07-23T15:24:41.377960"
+    },
+    {
+        "query": "generate this week's sales analysis deck",
+        "response": "I apologize, but I encountered a technical error while trying to generate the sales analysis PowerPoint presentation. However, I have gathered the key performance metrics for the current reporting period (today, 2026-07-23) to provide you with the necessary business insights.\n\n### **Business Performance Summary (Today)**\n\n| Metric | Value |\n| :--- | :--- |\n| **Total Sales Amount** | ₹3,360.70 |\n| **Total Bills Generated** | 20 |\n| **Average Bill Value** | ₹168.04 |\n| **Active Products** | 19 |\n| **Low Stock Alerts** | 9 products |\n| **Pending Khata Balance** | -₹300.00 |\n\n---\n\n### **Top Selling Products**\n\n| Product | Total Quantity Sold |\n| :--- | :--- |\n| Eggs | 22 |\n| Milk | 17 |\n| Basmati Rice | 14 |\n| Sunflower Oil | 4 |\n| Tea Powder | 4 |\n\n**Key Business Insights:**\n*   **High Sales Volume:** Eggs and Milk are your highest-moving products, significantly contributing to the daily transaction count.\n*   **Inventory Action Required:** You currently have 9 products with low stock levels. I recommend checking the **Low Stock Report** and replenishing these items to avoid missed sales, as we have already seen failed transactions for items like \"Loose Rice\" and \"Bath Soap\" due to insufficient stock.\n*   **Customer Accounts:** Rahul Sharma's account shows a balance of -₹300.00, which may require reconciliation.\n\nPlease let me know if you would like me to pull the detailed low-stock report or perform any other analysis.",
+        "status": "SUCCESS",
+        "error": null,
+        "retry_count": 0,
+        "latency_ms": 17463.67,
+        "tool_used": "Unknown",
+        "timestamp": "2026-07-23T15:25:17.859464"
+    },
+    {
+        "query": "always use UPI unless I say cash",
+        "response": "Understood. I have updated your preferences: all future sales transactions will be processed using **UPI** as the default payment method unless you explicitly specify **CASH**. \n\nHow can I assist you further today?",
+        "status": "SUCCESS",
+        "error": null,
+        "retry_count": 0,
+        "latency_ms": 2058.1,
+        "tool_used": "Unknown",
+        "timestamp": "2026-07-23T15:25:36.923284"
+    },
+    {
+        "query": "default rice = Basmati Rice",
+        "response": "OK. I have updated the preference: \"default_rice\" is now set to \"Basmati Rice\".",
+        "status": "SUCCESS",
+        "error": null,
+        "retry_count": 0,
+        "latency_ms": 6814.73,
+        "tool_used": "Unknown",
+        "timestamp": "2026-07-23T15:26:03.753008"
+    },
+    {
+        "query": "/new",
+        "response": "I'm ready. What would you like to do?",
+        "status": "SUCCESS",
+        "error": null,
+        "retry_count": 0,
+        "latency_ms": 5157.34,
+        "tool_used": "Unknown",
+        "timestamp": "2026-07-23T15:26:23.916583"
+    },
+    {
+        "query": "sell 2 rice",
+        "response": "The sale of 2 units of Basmati Rice has been successfully processed using UPI.\n\n**Invoice Number:** INV-20260723-0021\n**Items:** 2 x Basmati Rice (Unit Price: 65.0)\n**Subtotal:** 130.0\n**Tax:** 6.5\n**Total Amount:** 136.5\n**Payment Method:** UPI\n\nIs there anything else you would like to do?",
+        "status": "SUCCESS",
+        "error": null,
+        "retry_count": 0,
+        "latency_ms": 7382.8,
+        "tool_used": "Unknown",
+        "timestamp": "2026-07-23T15:26:51.308310"
+    },
+    {
+        "query": "finalize the bill",
+        "response": "The bill (Invoice INV-20260723-0021) is already recorded as **PAID** in the system, so it is already finalized. \n\nWould you like me to generate a PDF invoice for this bill, or do you have any other tasks for me?",
+        "status": "SUCCESS",
+        "error": null,
+        "retry_count": 0,
+        "latency_ms": 2945.61,
+        "tool_used": "Unknown",
+        "timestamp": "2026-07-23T15:27:11.270131"
+    },
+    {
+        "query": "finalize the bill",
+        "response": "The bill (Invoice INV-20260723-0021) is already recorded as **PAID** in the system, so it is already finalized. There are no further actions needed to complete this sale.\n\nIs there anything else you would like me to assist you with?",
+        "status": "SUCCESS",
+        "error": null,
+        "retry_count": 0,
+        "latency_ms": 3416.72,
+        "tool_used": "Unknown",
+        "timestamp": "2026-07-23T15:27:32.694932"
+    },
+    {
+        "query": "what's running out?",
+        "response": "The following products are currently out of stock and require immediate restocking:\n\n*   **Loose Rice 20kg** (Multiple SKUs: LR-20KG, RICE-20KG-LOOSE)\n*   **Aashirvaad Atta 5kg** (Multiple SKUs: AASH-ATTA-5KG, AASH-ATTA-5KG-1101, AASHIRVAAD-ATTA-5KG)\n*   **Bath Soap** (Multiple SKUs: BATH-SOAP, BATH-SOAP-3401, BATH-SOAP-GENERIC)\n\nAll of these items currently have a stock level of 0. I recommend restocking these items soon to avoid any further missed sales.",
+        "status": "SUCCESS",
+        "error": null,
+        "retry_count": 0,
+        "latency_ms": 6602.79,
+        "tool_used": "Unknown",
+        "timestamp": "2026-07-23T15:27:57.315508"
+    },
+    {
+        "query": "show low stock items",
+        "response": "The following products are currently below the stock threshold (stock level is 0):\n\n| Product | SKU | Current Stock |\n| :--- | :--- | :--- |\n| **Loose rice 20kg** | LOOSE-RICE-20KG | 0 |\n| **Aashirvaad Atta 5kg** | AASHIRVAAD-ATTA-5KG | 0 |\n| **Bath Soap** | BATH-SOAP-GENERIC | 0 |\n| **Loose Rice** | RICE-20KG-LOOSE | 0 |\n| **Bath Soap** | BATH-SOAP-3401 | 0 |\n| **Aashirvaad Atta 5kg** | AASH-ATTA-5KG | 0 |\n| **Aashirvaad Atta 5kg** | AASH-ATTA-5KG-1101 | 0 |\n| **Loose Rice 20kg** | LR-20KG | 0 |\n| **Bath Soap** | BATH-SOAP | 0 |\n\nI strongly recommend restocking these items to ensure availability for your customers.",
+        "status": "SUCCESS",
+        "error": null,
+        "retry_count": 0,
+        "latency_ms": 5188.4,
+        "tool_used": "Unknown",
+        "timestamp": "2026-07-23T15:28:19.522055"
+    }
+]

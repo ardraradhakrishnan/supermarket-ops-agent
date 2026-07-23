@@ -84,10 +84,16 @@ class Bill(Base, TimestampMixin):
     )
 
     status: Mapped[BillStatus] = mapped_column(
-        SqlEnum(BillStatus),
-        nullable=False,
-        default=BillStatus.ACTIVE,
-    )
+            SqlEnum(BillStatus),
+            default=BillStatus.DRAFT,
+            nullable=False,
+        )
+
+    paid_amount: Mapped[Decimal] = mapped_column(
+            Numeric(10, 2),
+            default=0,
+            nullable=False,
+        )
 
     def __repr__(self) -> str:
         return (

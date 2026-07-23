@@ -39,3 +39,6 @@ class BaseService:
 
     def scalars(self, statement):
         return list(self.db.scalars(statement))
+
+    def execute(self, statement):
+        return self.db.execute(statement).all()

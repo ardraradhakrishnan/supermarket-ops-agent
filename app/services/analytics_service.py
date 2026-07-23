@@ -35,7 +35,7 @@ class AnalyticsService(BaseService):
         today_sales = self.scalar(
             select(
                 func.coalesce(
-                    func.sum(Bill.total_amount),
+                    func.sum(Bill.grand_total),
                     0,
                 )
             ).where(
@@ -90,7 +90,7 @@ class AnalyticsService(BaseService):
         total_sales = self.scalar(
             select(
                 func.coalesce(
-                    func.sum(Bill.total_amount),
+                    func.sum(Bill.grand_total),
                     0,
                 )
             ).where(
@@ -129,9 +129,10 @@ class AnalyticsService(BaseService):
         rows = self.execute(
             select(
                 Product.name,
-                func.sum(BillItem.quantity).label(
-                    "quantity"
-                ),
+                func.coalesce(
+                    func.sum(BillItem.quantity),
+                    0,
+                ).label("quantity"),
             )
             .join(
                 BillItem,
@@ -225,7 +226,7 @@ class AnalyticsService(BaseService):
             )
 
             total += (
-                stock * product.selling_price
+                stock * product.unit_price
             )
 
         return {
@@ -252,7 +253,7 @@ class AnalyticsService(BaseService):
             {
                 "bill_id": bill.id,
                 "customer_id": bill.customer_id,
-                "amount": bill.total_amount,
+                "amount": bill.grand_total,
                 "created_at": bill.created_at,
             }
             for bill in bills

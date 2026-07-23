@@ -1,0 +1,232 @@
+[
+    {
+        "query": "add Parle-G 1 pack GST 12% HSN 1905 cost 8 MRP 10 quantity 50",
+        "response": "I have successfully added 50 packs of Parle-G (Product ID: 11) to the inventory.",
+        "status": "SUCCESS",
+        "error": null,
+        "retry_count": 0,
+        "latency_ms": 11347.44,
+        "tool_used": "Unknown",
+        "timestamp": "2026-07-23T15:59:55.309519"
+    },
+    {
+        "query": "sell 5 Parle-G",
+        "response": "I have recorded the sale of 5 packs of Parle-G. The transaction has been processed.",
+        "status": "SUCCESS",
+        "error": null,
+        "retry_count": 0,
+        "latency_ms": 3590.42,
+        "tool_used": "Unknown",
+        "timestamp": "2026-07-23T16:00:18.916457"
+    },
+    {
+        "query": "receive 20 more Parle-G",
+        "response": "I have successfully added 20 more packs of Parle-G to the inventory.",
+        "status": "SUCCESS",
+        "error": null,
+        "retry_count": 0,
+        "latency_ms": 3189.69,
+        "tool_used": "Unknown",
+        "timestamp": "2026-07-23T16:00:37.118987"
+    },
+    {
+        "query": "sell 5 milk",
+        "response": "I have successfully recorded the sale of 5 units of Milk.",
+        "status": "SUCCESS",
+        "error": null,
+        "retry_count": 0,
+        "latency_ms": 9287.32,
+        "tool_used": "Unknown",
+        "timestamp": "2026-07-23T16:01:03.419197"
+    },
+    {
+        "query": "sell 5 milk",
+        "response": "I have successfully recorded another sale of 5 units of Milk.",
+        "status": "SUCCESS",
+        "error": null,
+        "retry_count": 0,
+        "latency_ms": 7488.61,
+        "tool_used": "Unknown",
+        "timestamp": "2026-07-23T16:01:27.922765"
+    },
+    {
+        "query": "start a bill",
+        "response": "I am ready to help you with the billing. Please let me know which products you would like to include in the bill and their respective quantities.",
+        "status": "SUCCESS",
+        "error": null,
+        "retry_count": 0,
+        "latency_ms": 5822.28,
+        "tool_used": "Unknown",
+        "timestamp": "2026-07-23T16:01:51.773783"
+    },
+    {
+        "query": "add 2 milk to the bill",
+        "response": "I have created a draft bill for you.\n\n**Invoice Number:** INV-20260723-0001\n**Items:**\n- Milk: 2 units (Total: 64.00)\n\n**Subtotal:** 64.00\n**Tax:** 3.20\n**Total Amount:** 67.20\n\nThe bill has been created with a CASH payment method. Please let me know if you would like to add more items or if you're ready to complete this bill.",
+        "status": "SUCCESS",
+        "error": null,
+        "retry_count": 0,
+        "latency_ms": 3938.58,
+        "tool_used": "Unknown",
+        "timestamp": "2026-07-23T16:02:15.730735"
+    },
+    {
+        "query": "add 1 rice to the bill",
+        "response": "I have created a new bill (Invoice Number: INV-20260723-0002) that includes both Milk and Basmati Rice.\n\n**Invoice Number:** INV-20260723-0002\n**Items:**\n- Milk: 2 units (Total: 64.00)\n- Basmati Rice: 1 unit (Total: 65.00)\n\n**Subtotal:** 129.00\n**Tax:** 6.45\n**Total Amount:** 135.45\n\nThe bill is currently a draft. Please let me know if you would like to add anything else or if you are ready to proceed with this bill.",
+        "status": "SUCCESS",
+        "error": null,
+        "retry_count": 0,
+        "latency_ms": 6420.42,
+        "tool_used": "Unknown",
+        "timestamp": "2026-07-23T16:02:42.155952"
+    },
+    {
+        "query": "show me the bill so far",
+        "response": "Here are the details of your current bill (INV-20260723-0002):\n\n**Items:**\n*   **Milk:** 2 units @ 32.00 each = 64.00\n*   **Basmati Rice:** 1 unit @ 65.00 each = 65.00\n\n**Summary:**\n*   **Subtotal:** 129.00\n*   **Tax:** 6.45\n*   **Total Amount:** 135.45\n\nThe bill is currently a draft with a CASH payment method. Would you like to add more items, or are you ready to finalize this?",
+        "status": "SUCCESS",
+        "error": null,
+        "retry_count": 0,
+        "latency_ms": 5212.4,
+        "tool_used": "Unknown",
+        "timestamp": "2026-07-23T16:03:03.387245"
+    },
+    {
+        "query": "remove the rice",
+        "response": "I have created a new bill (INV-20260723-0003) for you with the Basmati Rice removed.\n\n**Invoice Number:** INV-20260723-0003\n**Items:**\n- Milk: 2 units (Total: 64.00)\n\n**Subtotal:** 64.00\n**Tax:** 3.20\n**Total Amount:** 67.20\n\nThe bill is ready. Would you like to add any other items, or shall we proceed with this?",
+        "status": "SUCCESS",
+        "error": null,
+        "retry_count": 0,
+        "latency_ms": 7841.53,
+        "tool_used": "Unknown",
+        "timestamp": "2026-07-23T16:03:29.241121"
+    },
+    {
+        "query": "add 3 rice instead",
+        "response": "I have updated your bill to include 3 units of Basmati Rice. Here is your new bill (INV-20260723-0004):\n\n**Invoice Number:** INV-20260723-0004\n**Items:**\n- Milk: 2 units (Total: 64.00)\n- Basmati Rice: 3 units (Total: 195.00)\n\n**Summary:**\n- **Subtotal:** 259.00\n- **Tax:** 12.95\n- **Total Amount:** 271.95\n\nPlease let me know if you would like to make further changes or if you are ready to finalize this invoice.",
+        "status": "SUCCESS",
+        "error": null,
+        "retry_count": 0,
+        "latency_ms": 4274.29,
+        "tool_used": "Unknown",
+        "timestamp": "2026-07-23T16:03:48.533124"
+    },
+    {
+        "query": "show me the bill so far",
+        "response": "Here are the details of your current bill (INV-20260723-0004):\n\n**Items:**\n*   **Milk:** 2 units @ 32.00 each = 64.00\n*   **Basmati Rice:** 3 units @ 65.00 each = 195.00\n\n**Summary:**\n*   **Subtotal:** 259.00\n*   **Tax:** 12.95\n*   **Total Amount:** 271.95\n\nThe bill is currently a draft with a CASH payment method. Would you like to add more items, or are you ready to finalize this?",
+        "status": "SUCCESS",
+        "error": null,
+        "retry_count": 0,
+        "latency_ms": 6575.84,
+        "tool_used": "Unknown",
+        "timestamp": "2026-07-23T16:04:13.121579"
+    },
+    {
+        "query": "finalize the bill",
+        "response": "The system encountered an error while trying to process the payment automatically. However, your current bill (INV-20260723-0004) for a total of 271.95 is recorded as a draft.\n\nSince the final payment recording step had an issue, could you please confirm if you would like me to attempt generating the PDF invoice, or is there anything else I can assist you with regarding this bill?",
+        "status": "SUCCESS",
+        "error": null,
+        "retry_count": 0,
+        "latency_ms": 6647.22,
+        "tool_used": "Unknown",
+        "timestamp": "2026-07-23T16:04:36.032701"
+    },
+    {
+        "query": "show me the tax breakup for that last bill",
+        "response": "For the bill (INV-20260723-0004), the tax breakup is as follows:\n\n*   **Milk (Product ID: 2):** \n    *   Subtotal: 64.00\n    *   GST Rate: 5%\n    *   Tax Amount: 3.20\n*   **Basmati Rice (Product ID: 1):** \n    *   Subtotal: 195.00\n    *   GST Rate: 5%\n    *   Tax Amount: 9.75\n\n**Total Tax:** 3.20 + 9.75 = **12.95**\n\nPlease let me know if you need anything else!",
+        "status": "SUCCESS",
+        "error": null,
+        "retry_count": 0,
+        "latency_ms": 7325.34,
+        "tool_used": "Unknown",
+        "timestamp": "2026-07-23T16:05:03.363433"
+    },
+    {
+        "query": "put ₹0 on Rahul's credit",
+        "response": "I could not find a customer named \"Rahul\" in the system, and there are currently no customers with outstanding balances. Could you please provide the correct name or customer ID for the account you are referring to?",
+        "status": "SUCCESS",
+        "error": null,
+        "retry_count": 0,
+        "latency_ms": 10666.33,
+        "tool_used": "Unknown",
+        "timestamp": "2026-07-23T16:05:34.071805"
+    },
+    {
+        "query": "put ₹500 on a brand new test customer's credit",
+        "response": "I have successfully recorded a credit of ₹500 for the new customer, \"test customer\" (Customer ID: 4).",
+        "status": "SUCCESS",
+        "error": null,
+        "retry_count": 0,
+        "latency_ms": 15025.45,
+        "tool_used": "Unknown",
+        "timestamp": "2026-07-23T16:06:08.110086"
+    },
+    {
+        "query": "what's their balance?",
+        "response": "The outstanding balance for \"test customer\" (Customer ID: 4) is ₹500.",
+        "status": "SUCCESS",
+        "error": null,
+        "retry_count": 0,
+        "latency_ms": 7164.46,
+        "tool_used": "Unknown",
+        "timestamp": "2026-07-23T16:06:30.288333"
+    },
+    {
+        "query": "they paid ₹100",
+        "response": "I have recorded the payment of ₹100 for \"test customer\" (Customer ID: 4).",
+        "status": "SUCCESS",
+        "error": null,
+        "retry_count": 0,
+        "latency_ms": 6532.42,
+        "tool_used": "Unknown",
+        "timestamp": "2026-07-23T16:06:53.834468"
+    },
+    {
+        "query": "what's their balance?",
+        "response": "The current outstanding balance for \"test customer\" (Customer ID: 4) is ₹400.",
+        "status": "SUCCESS",
+        "error": null,
+        "retry_count": 0,
+        "latency_ms": 5848.74,
+        "tool_used": "Unknown",
+        "timestamp": "2026-07-23T16:07:15.688398"
+    },
+    {
+        "query": "they paid -₹50",
+        "response": "I have recorded an adjustment of ₹50 for \"test customer\" (Customer ID: 4). The new balance is now ₹450.",
+        "status": "SUCCESS",
+        "error": null,
+        "retry_count": 0,
+        "latency_ms": 5997.02,
+        "tool_used": "Unknown",
+        "timestamp": "2026-07-23T16:07:39.704298"
+    },
+    {
+        "query": "sell 1 coffee powder for ₹50 to Rahul",
+        "response": "I found a customer named **Rahul Sharma** (ID: 1). Should I proceed with selling the coffee powder to him?",
+        "status": "SUCCESS",
+        "error": null,
+        "retry_count": 0,
+        "latency_ms": 12658.9,
+        "tool_used": "Unknown",
+        "timestamp": "2026-07-23T16:08:10.379442"
+    },
+    {
+        "query": "send me a PDF invoice for that last bill",
+        "response": "The system was unable to generate the PDF invoice for your last bill (INV-20260723-0004) due to an internal technical error. \n\nI apologize for the inconvenience. Would you like me to try anything else, or is there another way I can assist you with your billing records today?",
+        "status": "SUCCESS",
+        "error": null,
+        "retry_count": 0,
+        "latency_ms": 9567.83,
+        "tool_used": "Unknown",
+        "timestamp": "2026-07-23T16:08:39.962931"
+    },
+    {
+        "query": "generate this week's sales analysis deck",
+        "response": "I apologize, but I am currently unable to generate the sales analysis deck due to an internal system error (\"'Product' object has no attribute 'selling_price'\").\n\nWould you like me to provide a summary of the sales data for this week instead? I can retrieve the recent sales and provide an overview.",
+        "status": "SUCCESS",
+        "error": null,
+        "retry_count": 0,
+        "latency_ms": 12414.87,
+        "tool_used": "Unknown",
+        "timestamp": "2026-07-23T16:09:10.386233"
+    }
+]
